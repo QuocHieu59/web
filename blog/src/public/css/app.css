@@ -1,0 +1,396 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+  height: 70px;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+#header .login {
+  float: right;
+  line-height: 70px;
+  margin-right: 20px;
+}
+
+#header .login a:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+#header .login a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 10px;
+}
+
+#header .logo {
+  display: inline-block;
+  height: 100%;
+  width: 53px;
+}
+
+#menu {
+  display: inline-block;
+}
+
+#header .logo img {
+  height: 100%;
+}
+
+#menu li a {
+  line-height: 70px;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 24px;
+}
+
+#menu > li > a {
+  text-transform: uppercase;
+}
+
+#menu > li:hover > a {
+  background-color: #ccc;
+  color: #000;
+  display: inline-block;
+}
+
+#menu > li {
+  display: inline-block;
+}
+
+#menu .submenu {
+  display: none;
+  list-style-type: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  position: absolute;
+  background-color: #fff;
+}
+
+#menu .submenu li:hover a {
+  background-color: #ccc;
+  display: block;
+}
+
+#menu .submenu li a {
+  color: #000;
+}
+
+#menu li:hover .submenu {
+  display: block;
+}
+
+#home-page {
+  margin-top: 70px;
+}
+
+#home-page p {
+  color: #000;
+}
+
+#home-page .imghome {
+  margin: 0 58px;
+}
+
+#home-page .imghome img {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+#home-page .ourservice {
+  background-color: #d1d1cd;
+  margin: 0 58px;
+  padding: 10px 12px;
+  overflow: hidden;
+}
+
+.introduce {
+  margin-bottom: 8px;
+}
+
+.text-list .something {
+  height: 100%;
+  padding: 0 8px;
+  width: 25%;
+  float: left;
+}
+
+.text-list {
+  overflow: hidden;
+}
+
+.text-member {
+  border-radius: 4px;
+  background: #eae7dc;
+  border: 1px solid #000000;
+  padding: 10px;
+}
+
+.text-member .title {
+  margin-bottom: 8px;
+}
+
+.nut_dropdown {
+  background-color: #0080ff;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  float: right;
+  padding-right: 100px;
+  z-index: 4;
+  position: fixed;
+}
+
+.noidung_dropdown {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.noidung_dropdown a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.noidung_dropdown a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .noidung_dropdown {
+  display: block;
+}
+
+.dropdown:hover .nut_dropdown {
+  background-color: #00bfff;
+}
+
+.hienThi {
+  display: block;
+}
+
+.container1 {
+  margin-top: 95px;
+  z-index: -1;
+}
+
+.container0 {
+  z-index: 3;
+  position: relative;
+  background-color: #fff;
+  padding: 53px 0;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.header-content {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subheader-content {
+  text-align: center;
+}
+
+.img-list {
+  width: 25%;
+  float: left;
+  margin-bottom: 40px;
+  padding: 0 10px;
+}
+
+.under-img {
+  border: 2px solid #000000;
+  background: #eae7dc;
+}
+
+.img-list .img-name {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.under-img p, a {
+  color: #000;
+}
+
+.img-list .img-money {
+  text-align: center;
+  margin-bottom: 16px;
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.img-member {
+  width: 100%;
+}
+
+.img-member:hover {
+  border: 2px solid #000000;
+}
+
+.img-item {
+  text-align: center;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.buy-sp .insect-sp {
+  background-color: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.buy-sp a:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.logo-giohang {
+  display: inline-block;
+  height: 100%;
+  width: 70px;
+}
+
+input[type=text], input[type=tel] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+.imgshirtwoman {
+  width: 220px;
+}
+
+input:invalid + span::after {
+  content: "✖";
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+input:valid + span::after {
+  content: "✓";
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/*register*/
+.login1 {
+  background-color: #000;
+  z-index: 3;
+  position: relative;
+}
+
+.login1 .container {
+  padding: 16px;
+}
+
+.login1 h1, p, b {
+  color: #fff;
+}
+
+.login1 input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.login1 input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.login1 hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 20px;
+}
+
+.login1 .registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.login1 .registerbtn:hover {
+  opacity: 1;
+}
+
+.login1 a {
+  color: dodgerblue;
+}
+
+.login1 .signin {
+  text-align: center;
+}
+
+.container .show {
+  color: #000;
+}
+
+.modal-backdrop {
+  z-index: 1;
+}
+
+/*# sourceMappingURL=app.css.map */

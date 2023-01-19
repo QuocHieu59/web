@@ -1,0 +1,28 @@
+<div class="container">
+<div class="container1">
+     <div>
+                <a style="color:#000; float:right" href="/">Đăng xuất</a>
+            </div>
+    <div id=NU class="content-woman">
+        <h2 class="header-content">Nữ & Nam</h2>
+        <h3 class="subheader-content">Quần áo, váy</h3>
+        <div class="img-item">
+        {{#each shirt}}
+        <div class="img-list">
+            <img src="{{this.img}}" alt="{{this.name}}" class="img-member">
+            <div class="under-img">
+                <p class="img-name">{{this.name}}</p>
+                <div class="buy-sp">
+                <p class="img-money">Giá: {{this.money}}</p>
+                <a href="/shirt/{{this.slug}}" class="insect-sp">Đặt hàng</a>
+                </div>
+
+            </div>
+        </div>
+        {{/each}}
+        </div>
+        
+    </div>
+</div>
+
+</div>

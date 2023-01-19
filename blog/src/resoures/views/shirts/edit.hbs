@@ -1,0 +1,39 @@
+<div class="dropdown">
+                <button class="nut_dropdown">admin</button>
+                <div class="noidung_dropdown">
+                    <a href="/shirt/create">Đăng quần, áo</a>
+                    <a href="/me/storedshirt">Danh sách Quần, áo</a>
+                    <a href="/me/cart">Đơn Hàng </a>
+                    <div><hr class="dropdown-divider" color="red"></div>
+                    <a href="/">Đăng xuất</a>
+                </div>
+</div>
+<div class="container0">
+
+<div class="container2">
+<div class="mt-4">
+    <h3>Sửa dữ liệu</h3>
+    <form method="post" action="/shirt/{{shirt._id}}?_method=PUT">
+    <div class="mb-3">
+        <label for="name" class="form-label">Tên</label>
+        <input type="text" class="form-control" value="{{shirt.name}}" id="name" name="name">
+    </div>
+    <div class="mb-3">
+        <label for="des" class="form-label">Mô tả</label>
+        <textarea type="text" class="form-control" id="des" name="des">{{shirt.des}}</textarea>
+    </div>
+    <div class="mb-3">
+        <label for="img" class="form-label">Link ảnh</label>
+        <input type="text" class="form-control" value="{{shirt.img}}" id="img" name="img">
+    </div>
+    <div class="mb-3">
+        <label for="money" class="form-label">Giá tiền:</label>
+        <input type="number" class="form-control" value="{{shirt.money}}" id="money" name="money">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+</form>
+</div>
+
+</div>
+</div>
