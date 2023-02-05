@@ -21,7 +21,19 @@ app.use(morgan('combined'))
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 // Template engine
-app.engine('hbs', engine({extname: '.hbs'}));
+app.engine(
+  'hbs', 
+  engine({
+    extname: '.hbs',
+    helpers: {
+      sum: (a, b) => a + b,
+      tich: (a, b) => a*b,
+      thang: (a) => {
+        var month = a.getMonth() + 1;
+        return month;
+      }
+    }
+  }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resoures/views'));
 

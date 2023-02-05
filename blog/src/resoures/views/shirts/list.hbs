@@ -9,12 +9,14 @@
         <div class="img-item">
         {{#each shirt}}
         <div class="img-list">
-            <img src="{{this.img}}" alt="{{this.name}}" class="img-member">
+            <a href="/shirt/{{this.slug}}"><img  src="{{this.img}}" alt="{{this.name}}" class="img-member"></a>
             <div class="under-img">
                 <p class="img-name">{{this.name}}</p>
                 <div class="buy-sp">
                 <p class="img-money">Giá: {{this.money}}</p>
-                <a href="/shirt/{{this.slug}}" class="insect-sp">Đặt hàng</a>
+                <!-- <form method ="post" action="/shirt/storeincart">
+                    <button type="submit" class="insect-sp">Thêm vào giỏ</button>
+                </form> -->
                 </div>
 
             </div>

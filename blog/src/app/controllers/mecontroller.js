@@ -1,5 +1,6 @@
 const Shirt = require('../controllers/models/women_shirt');
-const info = require('../controllers/models/inf')
+const nick = require('../controllers/models/nick')
+const Data = require('../controllers/models/data')
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 class meController {
     storedShirt(req, res, next) {
@@ -13,12 +14,25 @@ class meController {
         .catch(next)
         
     }
+
+    nick(req, res, next) {
+        nick.find({})
+        .then(nick => {
+            nick = nick.map(nick => nick.toObject())
+            res.render('me/nick', {
+                nick: nick
+              });
+        })
+        .catch(next)
+        
+    }
+
     cart(req, res, next) {
-        info.find({})
-        .then(info => {
-            info = info.map(info => info.toObject())
+        Data.find({})
+        .then(Data => {
+            Data = Data.map(Data => Data.toObject())
             res.render('me/cart', {
-                info: info
+                Data: Data
               });
         })
         .catch(next)

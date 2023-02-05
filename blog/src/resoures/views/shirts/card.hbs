@@ -1,0 +1,137 @@
+
+<div class="container">
+
+<div class="container1">
+<div>
+    <a style="color:#000; float:right" href="/">Đăng xuất</a>
+</div>
+<div class="logo">
+    <h1>HG 59 SHOP</h1>
+</div>
+<div class="mt-4">
+    <h3>Giỏ Hàng</h3>
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">SL - SZ - loai</th>
+        <th scope="col">Giá Gốc</th>
+        <th scope="col">Giá tổng</th>
+        </tr>
+    </thead>
+    <tbody >
+        {{#each inf}}
+        <tr class="cart-row">
+        <th scope="row">{{sum @index 1}}</th>
+        <td class="sizeKL"> {{this.SL}} + {{this.size}} </td>
+        <td>{{this.money}}</td>
+        <td class="tong">{{tich this.money this.SL}}</td>
+        
+        <td>
+            <a href="#" class="btn btn-link" data-toggle="modal" data-id="{{this._id}}" data-target="#delete-shirt-modal">Xóa</a>
+        </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<div id="delete-shirt-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xóa shirt?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn chắc chắn muốn xóa ?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-delete-shirt" type="button" class="btn btn-danger">Xóa bỏ</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{{!-- Delete hidden form --}}
+<form name="delete-shirt-form" method="POST"></form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var shirtId;
+        var deleteForm = document.forms['delete-shirt-form'];
+        var btnDeleteShirt = document.getElementById('btn-delete-shirt');
+       
+        $('#delete-shirt-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            infId = button.data('id');
+        });
+        
+       
+        btnDeleteShirt.onclick = function () {
+            deleteForm.action = '/shirt/inf/' + infId + '?_method=DELETE';
+            deleteForm.submit();
+        }
+    });
+</script>
+<div class="cart-total" style="
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-left: 750px
+">
+    <strong class="cart-total-title" style="padding-right: 15px">Tổng tiền: </strong>
+    <span class="cart-total-price">$0</span>
+</div>
+
+</div>
+<div class="row">
+    <div id="show" class="col-lg-7">
+    <form method ="post" action="/shirt/store">
+    <div class="container">
+         <p style="color: black;">Điền thông tin của bạn</p>
+        <hr>
+        <label for="Name"><b class="show">Họ và tên</b></label>
+        <input type="text" placeholder="Họ và tên" name="Name" id="Name" required>
+
+        <label for="phone"><b class="show">Số điện thoại (format: 123-456-7890)</b></label>
+        <input type="tel" id="number" name="number" placeholder="Số điện thoại" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <label for="psw-repeat"><b class="show">Địa chỉ</b></label>
+        <input type="text" placeholder="Địa chỉ" name="address" required>
+        <input type="text" class="inputField" name="tong" value="hihi" style="display: none;" required>
+        <input type="text" class="inputFieldSLS" name="size" value="hihi" style="display: none;" required>
+        <hr>                                                  
+        <button type="submit" class="registerbtn">Đặt Hàng</button>
+    </div>
+    </form>
+    </div>
+    <div class="col-lg-6">
+    </div>
+</div>
+<script> 
+    var cartRows = document.getElementsByClassName('cart-row')
+    let total = 0;
+    for (var i = 0; i < cartRows.length; i++) {
+      var tableHeader = document.getElementsByClassName("tong")[i];
+      var headerContent = tableHeader.textContent;
+      total += Number(headerContent);
+    }
+  document.getElementsByClassName('inputField')[0].value = total
+  document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+</script>
+<script> 
+    var cartRows = document.getElementsByClassName('cart-row')
+    let SLS = 0;
+    for (var i = 0; i < cartRows.length; i++) {
+      var tableHeader1 = document.getElementsByClassName("sizeKL")[i];
+      var headerContent1 = tableHeader1.textContent;
+      SLS = SLS + '/ (' + headerContent1 + ') ';
+    }
+    document.getElementsByClassName('inputFieldSLS')[0].value = SLS
+</script>
+
+</div>
+</div>
+

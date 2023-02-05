@@ -10,9 +10,9 @@
 </div>
 <div class="row">
     <div id="show" class="col-lg-6">
-    <form method ="post" action="/shirt/store">
+    <form method ="post" action="/shirt/storeKX">
     <div class="container">
-        <p>Điền thông tin của bạn</p>
+        <!-- <p>Điền thông tin của bạn</p>
         <hr>
         <label for="Name"><b class="show">Họ và tên</b></label>
         <input type="text" placeholder="Họ và tên" name="Name" id="Name" required>
@@ -21,7 +21,7 @@
         <input type="tel" id="number" name="number" placeholder="Số điện thoại" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
         <label for="psw-repeat"><b class="show">Địa chỉ</b></label>
         <input type="text" placeholder="Địa chỉ" name="address" required>
-        <hr>
+        <hr> -->
                     
                     <legend>Chọn size đồ:</legend>
                     <div>
@@ -29,7 +29,6 @@
                             checked>
                     <label for="huey">M</label>
                     </div>
-
                     <div>
                     <input type="radio" id="dewey" name="size" value="L - {{shirt.name}}">
                     <label for="dewey">L</label>
@@ -41,9 +40,12 @@
                <label for="tentacles">Số lượng (1-10):</label>
                 <input type="number" id="tentacles" name="SL"
                         min="1" max="10">
+                <div>
+                    <input style="display: none;" type="radio" id="louie" name="money" value="{{shirt.money}}" checked>
+                    </div>
                     <span class="validity"></span>
                        
-        <button type="submit" class="registerbtn">Đặt hàng</button>
+        <button type="submit" class="registerbtn">Thêm vào giỏ</button>
     </div>
     </form>
     </div>
